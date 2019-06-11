@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import  React, {useState} from 'react';
+import Todos from './Todos';
+import TodoForm from './TodoForm'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [todos, setTodos] = useState(['AWS Training']);
+
+    const addTodos = (todoTitle) => {
+        setTodos([...todos, todoTitle])
+    }
+
+    return(
+        <div className='ui segment'> 
+            <div className='ui container'>
+                <TodoForm addTodos= {addTodos}/>
+                <Todos todos = {todos}/>
+            </div>
+        </div>
+    );
 }
 
 export default App;
