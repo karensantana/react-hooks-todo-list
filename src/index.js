@@ -1,12 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Todos from './Todos';
-
-const App = () => {
-  return (
-    <div>
-      <Todos />
-    </div>);
-}
+import App from './App';
 
 ReactDOM.render(<App />, document.getElementById('root'));

@@ -1,9 +1,16 @@
 import React from 'react';
+import TodoItem from './TodoItem'
 
-const Todos = () => {
+const Todos = ({todos}) => {
     return(
         <div>
-            Todo list
+          <ul>
+              {todos.map((item) => (
+                <li> 
+                    <TodoItem todo={item}/>
+                </li>)   
+              )}
+          </ul>
         </div>
     );
 }
